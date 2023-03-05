@@ -18,7 +18,7 @@ unsigned int failed_tests;
 unsigned int total_tests;
 
 /* Tests will be based on this version. */
-#define UTF8_LATEST	UNICODE_AGE(12, 1, 0)
+#define UTF8_LATEST	UNICODE_AGE(15, 0, 0)
 
 #define _test(cond, func, line, fmt, ...) do {				\
 		total_tests++;						\
@@ -267,7 +267,7 @@ static void check_supported_versions(struct unicode_map *um)
 	test(utf8version_is_supported(um, UTF8_LATEST));
 
 	/* Next versions don't exist. */
-	test(!utf8version_is_supported(um, UNICODE_AGE(13, 0, 0)));
+	test(!utf8version_is_supported(um, UNICODE_AGE(16, 0, 0)));
 	test(!utf8version_is_supported(um, UNICODE_AGE(0, 0, 0)));
 	test(!utf8version_is_supported(um, UNICODE_AGE(-1, -1, -1)));
 }
